@@ -5,12 +5,23 @@
     --cinza-escuro: #6b7280;
     --branco: #ffffff;
     --preto: #111827;
+    --cinza: #6e6f72;
+    --background: #0D1322;
+    --azul-preto:#050A1A;
+
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    
 }
 
 .sidebar {
     width: 240px;
     height: 100vh;
-    background: var(--cinza-claro);
+    background: var(--azul-preto);
     padding: 25px 20px;
     box-shadow: 3px 0 12px rgba(0,0,0,0.1);
     position: fixed;
@@ -18,6 +29,7 @@
     left: 0;
     display: flex;
     flex-direction: column;
+    
 }
 
 .brand {
@@ -29,7 +41,7 @@
     width: 70px;
     height: 70px;
     border-radius: 12px;
-    background: var(--azul-escuro);
+    background: var(--azul-preto);
     color: var(--branco);
     margin: 0 auto 10px auto;
     display: flex;
@@ -37,7 +49,7 @@
     justify-content: center;
     font-weight: 700;
     font-size: 22px;
-    box-shadow: 0 8px 18px rgba(11, 99, 255, 0.3);
+    box-shadow: 0 8px 18px rgba(4, 41, 105, 0.3);
 }
 
 .brand h2 {
@@ -66,19 +78,28 @@
     font-size: 15px;
     font-weight: 600;
     color: var(--preto);
-    background: var(--branco);
+    background: var(--cinza);
     border-radius: 10px;
     border: 1px solid rgba(15,23,42,0.1);
     transition: 0.2s ease;
 }
 
 .actions a:hover {
-    background: var(--azul-escuro);
+    background: var(--cinza-escuro);
     color: var(--branco);
     transform: translateX(5px);
 }
 
 main, .content {
-    margin-left: 260px;
+    margin-left: 280px;
+    margin-right: 280px;
     padding: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--branco);
+
+}
+p, ul, li, tr {
+    color: var(--cinza);
 }

@@ -1,26 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto</title>
+    <title>HydroPump 3000 - Projeto</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <aside class="sidebar">
-            <div class="brand">
-                <div class="logo">BJ</div>
-                <h2>Nosso Projeto</h2>
-                <p class="lead">Descubra os detalhes do nosso Projeto</p>
-            </div>
+        <div class="brand">
+            <div class="logo">BJ</div>
+            <h2>Nosso Projeto</h2>
+            <p class="lead">Descubra os detalhes do nosso Projeto</p>
+        </div>
 
-            <nav class="actions">
-                <a href="index.html">Home</a>
-                <a href="desenvolvimento.html">Desenvolvimento</a>
-                <a href="projeto.html">Projeto</a>
-                <a href="equipe.html">Equipe</a>
-                <a href="sobre.html">Sobre</a>
-            </nav>
-        </aside>
+        <nav class="actions">
+            <a href="index.html">Home</a>
+            <a href="desenvolvimento.html">Desenvolvimento</a>
+            <a href="projeto.html">Projeto</a>
+            <a href="equipe.html">Equipe</a>
+            <a href="sobre.html">Sobre</a>
+        </nav>
+    </aside>
+
+    <main>
+        <h1>Descrição detalhada do Robô Bombeiro</h1>
+
+        <p>Entenda a motivação, objetivos, funcionamento geral e arquitetura do protótipo desenvolvido.</p>
+
+        <h2>1. Motivação e objetivos</h2>
+        <h3>Motivação</h3>
+        <p>Incêndios em ambientes confinados representam alto risco para equipes de resgate. Antes de qualquer atuação,
+            é necessário inspecionar o local, o que pode expor bombeiros a fumaça, calor extremo e estruturas instáveis.
+            Um robô capaz de se aproximar do foco e iniciar o combate com água reduz a exposição humana e contribui para
+            maior segurança operacional.
+        </p>
+
+        <h3>Objetivo Geral</h3>
+        <p>Desenvolver um protótipo de caminhão robótico que localiza uma fonte de calor por meio de sensores térmicos,
+            se desloca autonomamente até o foco e aciona uma bomba d’água para combate direcionado.
+        </p>
+        <h3>Objetivos Específicos</h3>
+        <ul>
+            <li>Integrar sensores térmicos com um microcontrolador de baixo custo.</li>
+            <li>Controlar quatro motores (um por roda) de forma coordenada.</li>
+            <li>Implementar lógica de navegação baseada em leitura de temperatura.</li>
+            <li>Documentar todo processo em formato de site técnico.</li>
+        </ul>
+
+        <h2>2. Arquitetura geral do sistema</h2>
+        <p>O robô é dividido em quatro blocos principais: sensoriamento térmico, processamento, atuação, mecânica e
+            bombeamento de água.</p>
+        <img src="assets/css/img/robo-bombeiro-diagrama.jpg" alt="Esquema conceitual do robô bombeiro">
+        <p>Diagrama usado na construção do robô bombeiro</p>
+
+        <h2>3. Componentes e suprimentos</h2>
+        <table>
+            <tr>
+                <th>Componente</th>
+                <th>Descrição</th>
+                <th>Referência</th>
+            </tr>
+            <tr>
+                <td>Placa de ensaio</td>
+                <td>Protoboard para montagem dos circuitos</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>cabeamento</td>
+                <td>25x Jumpers macho-macho, macho-fêmea, e fêmea-fêmea</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Estrutura</td>
+                <td>Chassi com chapa de MDF</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>microcontrolador</td>
+                <td>Arduino Uno - Placa principal</td>
+                <td>-----</td>
+            </tr>
+
+            <tr>
+                <td>Motores DC</td>
+                <td>4x Motores DC com caixa de redução</td>
+                <td>-----</td>
+            </tr>
+
+            <tr>
+                <td>Rodas</td>
+                <td>4x Rodas compatíveis com os motores</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Módulo
+                <td>
+                <td>Driver de motor</td>
+                <td>L298N</td>
+            </tr>
+            <tr>
+                <td>Servo motor</td>
+                <td>micro servo motor</td>
+                <td>MG90s</td>
+            </tr>
+            <tr>
+                <td>Reservatório</td>
+                <td>Reservatório de água com garrafa pet</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Bomba d'água</td>
+                <td>Mini bomba 5V</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>tubo de silicone</td>
+                <td>Tubo de 30cm para conduzir água</td>
+                <td>-----</td>
+            </tr>
+
+            <tr>
+                <td>Fonte de alimentação</td>
+                <td>Bateria 3.7V li-on</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Chaveamento</td>
+                <td>Interruptor liga/desliga</td>
+                <td>-----</td>
+            </tr>
+
+            <tr>
+                <td>Capacitores</td>
+                <td>3x capacitores</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Diodo</td>
+                <td>1x Diodo</td>
+                <td>1N4148</td>
+            </tr>
+
+            <tr>
+                <td>Transistor</td>
+                <td>1x Transistor NPN</td>
+                <td>TIP122</td>
+            </tr>
+            <tr>
+                <td>Resistores</td>
+                <td>1x Resistor 1kΩ</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Bombeamento</td>
+                <td>1x borrifador</td>
+                <td>-----</td>
+            </tr>
+            <tr>
+                <td>Sensores Térmicos</td>
+                <td>3x Sensores de temperatura</td>
+                <td>KY 026</td>
+            </tr>
+        </table>
+        <h2>4. Aplicativos e ferramentas utilizadas</h2>
+        <ul>
+            <li>Arduino IDE - Desenvolvimento e upload do código para o microcontrolador.</li>
+            <li>Tinkercad - Diagramação dos circuitos eletrônicos/ testes iniciais.</li>
+            <li>GitHub - Hospedagem do código-fonte e documentação do projeto.</li>
+            <li>Visual Studio Code - Edição de arquivos HTML e CSS para o site do projeto.</li>
+            <li>Youtube - Hospedagem do video final de demonstração.</li>
+        </ul>
+
+        <a href=""> <!--ADICIONAR LINK DE DOWNLOAD-->
+            <button type="button">DOWNLOAD</button>
+        </a>
+    </main>
 </body>
+
 </html>
+
+
