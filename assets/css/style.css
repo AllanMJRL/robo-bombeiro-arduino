@@ -1,27 +1,21 @@
-/* =============== VARIÁVEIS DE TEMA =============== */
 :root {
-    /* Fundo escuro padrão */
     --fundo-principal: #050814;
     --fundo-secundario: #020617;
     --fundo-lateral: rgba(15, 23, 42, 0.85);
 
-    /* Textos */
     --texto-principal: #e5e7eb;
     --texto-secundario: #9ca3af;
     --texto-claro: #f9fafb;
 
-    /* Cores de destaque (azul escuro) */
     --cor-primaria: #1d4ed8;
     --cor-hover: #2563eb;
 
-    /* Bordas / sombra / cards */
     --borda: rgba(148, 163, 184, 0.4);
     --sombra: 0 22px 50px rgba(0, 0, 0, 0.85);
     --fundo-card: rgba(15, 23, 42, 0.95);
     --fundo-codigo: #020617;
 }
 
-/* Tema claro opcional */
 [data-tema="claro"] {
     --fundo-principal: #ffffff;
     --fundo-secundario: #f3f4f6;
@@ -41,7 +35,6 @@
     --fundo-codigo: #f9fafb;
 }
 
-/* =============== RESET E BASE =============== */
 * {
     margin: 0;
     padding: 0;
@@ -57,7 +50,6 @@ body {
     line-height: 1.6;
 }
 
-/* =============== BOTÃO TROCAR TEMA =============== */
 .botao-tema {
     position: fixed;
     top: 18px;
@@ -84,7 +76,6 @@ body {
     filter: brightness(1.05);
 }
 
-/* =============== BARRA LATERAL (GLASSMORPHISM) =============== */
 .barra-lateral {
     width: 320px;
     background: var(--fundo-lateral);
@@ -102,7 +93,6 @@ body {
     overflow-y: auto;
 }
 
-/* Marca / logo */
 .marca {
     margin-bottom: 30px;
 }
@@ -134,7 +124,6 @@ body {
     color: #cbd5f5;
 }
 
-/* =============== MENU LATERAL =============== */
 .menu {
     margin-top: 20px;
     display: flex;
@@ -186,7 +175,6 @@ body {
     transform: translateX(0);
 }
 
-/* =============== CONTEÚDO PRINCIPAL =============== */
 .conteudo {
     margin-left: 380px;
     padding: 40px 44px;
@@ -231,7 +219,6 @@ body {
     color: var(--cor-primaria);
 }
 
-/* =============== TABELAS =============== */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -267,7 +254,6 @@ tr:hover {
     background: rgba(15, 23, 42, 0.85);
 }
 
-/* =============== BLOCO DE CÓDIGO =============== */
 .bloco-codigo {
     background: var(--fundo-codigo);
     border-radius: 14px;
@@ -283,7 +269,6 @@ tr:hover {
     font-size: 14px;
 }
 
-/* =============== EQUIPE – VITRINE STARTUP =============== */
 .grade-equipe {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -338,11 +323,9 @@ tr:hover {
     align-items: center;
     justify-content: center;
 
-    /* Fundo para fotos que não preenchem totalmente */
     background: #020617;
 }
 
-/* ✅ REGRA FINAL QUE RESOLVE TODOS OS CORTES */
 .foto-membro img {
     width: auto;
     height: auto;
@@ -394,7 +377,6 @@ tr:hover {
     text-decoration: underline;
 }
 
-/* =============== BOTÕES =============== */
 .botao,
 button[type="button"] {
     background: linear-gradient(90deg, var(--cor-primaria), var(--cor-hover));
@@ -415,7 +397,6 @@ button[type="button"]:hover {
     transform: translateY(-2px);
 }
 
-/* =============== IMAGENS / IFRAME =============== */
 img {
     max-width: 100%;
     height: auto;
@@ -430,7 +411,6 @@ iframe {
     box-shadow: 0 16px 38px rgba(15, 23, 42, 0.95);
 }
 
-/* =============== ANIMAÇÃO DE REVELAR =============== */
 .revelar {
     opacity: 0;
     transform: translateY(18px);
@@ -442,7 +422,6 @@ iframe {
     transform: translateY(0);
 }
 
-/* =============== RESPONSIVO =============== */
 @media (max-width: 900px) {
     body {
         flex-direction: column;
