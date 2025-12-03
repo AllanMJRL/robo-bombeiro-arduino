@@ -9,56 +9,61 @@
 </head>
 
 <body>
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="logo">BJ</div>
+    <button class="botao-tema" type="button" aria-label="Alternar tema">🌓</button>
+
+    <aside class="barra-lateral">
+        <div class="marca">
+            <div class="logo">HP</div>
             <h2>Desenvolvimento</h2>
-            <p class="lead">Saiba como foi o desenvolvimento do nosso Projeto</p>
+            <p class="descricao">Saiba como foi o desenvolvimento do nosso Projeto.</p>
         </div>
 
-        <nav class="actions">
-            <a href="index.html">Home</a>
+        <nav class="menu">
+            <a href="index.html">Início</a>
             <a href="desenvolvimento.html">Desenvolvimento</a>
             <a href="projeto.html">Projeto</a>
             <a href="equipe.html">Equipe</a>
             <a href="sobre.html">Sobre</a>
         </nav>
     </aside>
-    <main>
+
+    <main class="conteudo">
         <h1>Desenvolvimento do robô bombeiro</h1>
         <p>Montagem mecânica, ligação elétrica, programação, testes e melhorias realizadas ao longo do projeto.</p>
+
         <h2>1. Passo a passo da montagem</h2>
-        <p>As etapas abaixo descrevem a contrução do robô</p>
+        <p>As etapas abaixo descrevem a construção do robô:</p>
         <ul>
-            <li>Montagem do chassi - Fixação das quatro rodas ao chassi, atentando ao alinhamento e altura em relaçao ao
-                solo.</li>
+            <li>Montagem do chassi - Fixação das quatro rodas ao chassi, atentando ao alinhamento e altura em relação ao solo.</li>
             <li>Instalação dos motores e driver - Acoplamento dos motores DC às rodas e ligação aos drivers.</li>
-            <li>Fixação dos sensores térmicos - Montagem dos sensores na parte frontal do robô, distribuídos em ângulos
-                diferentes para detectar a direção do foco de calor.</li>
-            <li>Ligação da bomba d’água ao reservatório - Instalação do reservatório, bomba e mangueira, direcionando o
-                jato para a frente do robô.</li>
-            <li>Ligações elétricas e testes - Conclusão da fiação entre microcontrolador, drivers, sensores e bomba.
-            </li>
+            <li>Fixação dos sensores térmicos - Montagem dos sensores na parte frontal do robô, distribuídos em ângulos diferentes para detectar a direção do foco de calor.</li>
+            <li>Ligação da bomba d’água ao reservatório - Instalação do reservatório, bomba e mangueira, direcionando o jato para a frente do robô.</li>
+            <li>Ligações elétricas e testes - Conclusão da fiação entre microcontrolador, drivers, sensores e bomba.</li>
             <li>Programação do Arduino para leitura dos sensores e controle dos motores e bomba.</li>
             <li>Testes iniciais de movimentação e detecção de calor.</li>
             <li>Ajustes finos na lógica de navegação e acionamento da bomba.</li>
         </ul>
-        <h2>Código-fonte principal</h2>
-        <p>--------------CÓDIGO------------</p>
 
-        <h2>Video de demonstração</h2>
+        <h2>Código-fonte principal</h2>
+        <div class="bloco-codigo">
+            <pre>// Adicione aqui o código principal do Arduino
+// -------------- CÓDIGO --------------</pre>
+        </div>
+
+        <h2>Vídeo de demonstração</h2>
         <p>Vídeo mostrando o robô encontrando o foco de calor e realizando o disparo de água de forma autônoma.</p>
-        <iframe width="560" height="315" src="www.youtube.com" frameborder="0"
+        <iframe width="560" height="315" src="https://www.youtube.com" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>. <!-- ADICIONAR LINK DO VIDEO HOSPEDADO NO YOUTUBE -->
+            allowfullscreen></iframe>
 
         <h2>2. Problemas enfrentados e soluções</h2>
         <ul>
-            <li></li>
-            <li></li> <!--ADICIONAR PROBLEMAS-->
-            <li></li>
-            <li></li>
+            <li><!-- problema 1 --></li>
+            <li><!-- problema 2 --></li>
+            <li><!-- problema 3 --></li>
+            <li><!-- problema 4 --></li>
         </ul>
+
         <h2>3. Lições aprendidas</h2>
         <ul>
             <li>Planejamento da arquitetura de hardware antes da montagem;</li>
@@ -66,6 +71,8 @@
             <li>Valor de documentar cada etapa com fotos, esquemas e versões de código.</li>
         </ul>
     </main>
+
+    <script src="./assets/js/tema.js"></script>
 </body>
 
 </html>

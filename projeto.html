@@ -9,15 +9,17 @@
 </head>
 
 <body>
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="logo">BJ</div>
+    <button class="botao-tema" type="button" aria-label="Alternar tema">🌓</button>
+
+    <aside class="barra-lateral">
+        <div class="marca">
+            <div class="logo">HP</div>
             <h2>Nosso Projeto</h2>
-            <p class="lead">Descubra os detalhes do nosso Projeto</p>
+            <p class="descricao">Descubra os detalhes do nosso Projeto.</p>
         </div>
 
-        <nav class="actions">
-            <a href="index.html">Home</a>
+        <nav class="menu">
+            <a href="index.html">Início</a>
             <a href="desenvolvimento.html">Desenvolvimento</a>
             <a href="projeto.html">Projeto</a>
             <a href="equipe.html">Equipe</a>
@@ -25,9 +27,8 @@
         </nav>
     </aside>
 
-    <main>
+    <main class="conteudo">
         <h1>Descrição detalhada do Robô Bombeiro</h1>
-
         <p>Entenda a motivação, objetivos, funcionamento geral e arquitetura do protótipo desenvolvido.</p>
 
         <h2>1. Motivação e objetivos</h2>
@@ -35,13 +36,12 @@
         <p>Incêndios em ambientes confinados representam alto risco para equipes de resgate. Antes de qualquer atuação,
             é necessário inspecionar o local, o que pode expor bombeiros a fumaça, calor extremo e estruturas instáveis.
             Um robô capaz de se aproximar do foco e iniciar o combate com água reduz a exposição humana e contribui para
-            maior segurança operacional.
-        </p>
+            maior segurança operacional.</p>
 
         <h3>Objetivo Geral</h3>
         <p>Desenvolver um protótipo de caminhão robótico que localiza uma fonte de calor por meio de sensores térmicos,
-            se desloca autonomamente até o foco e aciona uma bomba d’água para combate direcionado.
-        </p>
+            se desloca autonomamente até o foco e aciona uma bomba d’água para combate direcionado.</p>
+
         <h3>Objetivos Específicos</h3>
         <ul>
             <li>Integrar sensores térmicos com um microcontrolador de baixo custo.</li>
@@ -54,9 +54,10 @@
         <p>O robô é dividido em quatro blocos principais: sensoriamento térmico, processamento, atuação, mecânica e
             bombeamento de água.</p>
         <img src="assets/css/img/robo-bombeiro-diagrama.jpg" alt="Esquema conceitual do robô bombeiro">
-        <p>Diagrama usado na construção do robô bombeiro</p>
+        <p>Diagrama usado na construção do robô bombeiro.</p>
 
         <h2>3. Componentes e suprimentos</h2>
+        <!-- Tabela igual à original, só mantida aqui -->
         <table>
             <tr>
                 <th>Componente</th>
@@ -69,7 +70,7 @@
                 <td>-----</td>
             </tr>
             <tr>
-                <td>cabeamento</td>
+                <td>Cabeamento</td>
                 <td>25x Jumpers macho-macho, macho-fêmea, e fêmea-fêmea</td>
                 <td>-----</td>
             </tr>
@@ -79,31 +80,28 @@
                 <td>-----</td>
             </tr>
             <tr>
-                <td>microcontrolador</td>
+                <td>Microcontrolador</td>
                 <td>Arduino Uno - Placa principal</td>
                 <td>-----</td>
             </tr>
-
             <tr>
                 <td>Motores DC</td>
                 <td>4x Motores DC com caixa de redução</td>
                 <td>-----</td>
             </tr>
-
             <tr>
                 <td>Rodas</td>
                 <td>4x Rodas compatíveis com os motores</td>
                 <td>-----</td>
             </tr>
             <tr>
-                <td>Módulo
-                <td>
+                <td>Módulo</td>
                 <td>Driver de motor</td>
                 <td>L298N</td>
             </tr>
             <tr>
                 <td>Servo motor</td>
-                <td>micro servo motor</td>
+                <td>Micro servo motor</td>
                 <td>MG90s</td>
             </tr>
             <tr>
@@ -117,11 +115,10 @@
                 <td>-----</td>
             </tr>
             <tr>
-                <td>tubo de silicone</td>
+                <td>Tubo de silicone</td>
                 <td>Tubo de 30cm para conduzir água</td>
                 <td>-----</td>
             </tr>
-
             <tr>
                 <td>Fonte de alimentação</td>
                 <td>Bateria 3.7V li-on</td>
@@ -132,7 +129,6 @@
                 <td>Interruptor liga/desliga</td>
                 <td>-----</td>
             </tr>
-
             <tr>
                 <td>Capacitores</td>
                 <td>3x capacitores</td>
@@ -143,7 +139,6 @@
                 <td>1x Diodo</td>
                 <td>1N4148</td>
             </tr>
-
             <tr>
                 <td>Transistor</td>
                 <td>1x Transistor NPN</td>
@@ -165,21 +160,22 @@
                 <td>KY 026</td>
             </tr>
         </table>
+
         <h2>4. Aplicativos e ferramentas utilizadas</h2>
         <ul>
             <li>Arduino IDE - Desenvolvimento e upload do código para o microcontrolador.</li>
-            <li>Tinkercad - Diagramação dos circuitos eletrônicos/ testes iniciais.</li>
+            <li>Tinkercad - Diagramação dos circuitos eletrônicos / testes iniciais.</li>
             <li>GitHub - Hospedagem do código-fonte e documentação do projeto.</li>
-            <li>Visual Studio Code - Edição de arquivos HTML e CSS para o site do projeto.</li>
-            <li>Youtube - Hospedagem do video final de demonstração.</li>
+            <li>Visual Studio Code - Edição de arquivos HTML, CSS e JavaScript para o site do projeto.</li>
+            <li>YouTube - Hospedagem do vídeo final de demonstração.</li>
         </ul>
 
-        <a href=""> <!--ADICIONAR LINK DE DOWNLOAD-->
-            <button type="button">DOWNLOAD</button>
+        <a href="">
+            <button type="button" class="botao">DOWNLOAD</button>
         </a>
     </main>
+
+    <script src="./assets/js/tema.js"></script>
 </body>
 
 </html>
-
-
