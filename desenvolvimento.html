@@ -47,30 +47,25 @@
             <li>Ajustes finos na lógica de navegação e acionamento da bomba.</li>
         </ul>
 
-        <h2>Código-fonte principal</h2>
+        <h2>Código-fonte principal robo-bombeiro</h2>
         <div class="bloco-codigo">
-            <pre>// -------------- CÓDIGO --------------
-                #define enA 10 // Enable1 L298 Pin enA 
-                #define in1 9  // Motor1 L298 Pin in1
-                #define in2 8  // Motor1 L298 Pin in2
-                #define in3 7  // Motor2 L298 Pin in3
-                #define in4 6  // Motor2 L298 Pin in4
-                #define enB 5  // Enable2 L298 Pin enB 
+            <pre>// -------------- CÓDIGO --------------//
+                #define enA 10
+                #define in1 9
+                #define in2 8
+                #define in3 7
+                #define in4 6
+                #define enB 5
                 
-                #define ir_R A0
-                #define ir_F A1
-                #define ir_L A2
+                #define ir_F A2
+                #define pump A4
                 
-                #define pump A5
-                
-                int Speed = 160;     
-                int s2;             
+                int Speed = 160;
                 int threshold = 350;
-
+                int closeThreshold = 80;
+                
                 void setup() {
                   Serial.begin(9600);
-                  Serial.println("--- INICIANDO ROBÔ DE COMBATE A INCÊNDIO SIMPLIFICADO ---");
-                  Serial.println("Alvo: Detectar fogo frontal -> Avançar e Ligar Bomba.");
                 
                   pinMode(enA, OUTPUT);
                   pinMode(in1, OUTPUT);
@@ -79,69 +74,59 @@
                   pinMode(in4, OUTPUT);
                   pinMode(enB, OUTPUT);
                 
-                  pinMode(ir_R, INPUT);
                   pinMode(ir_F, INPUT);
-                  pinMode(ir_L, INPUT);
-                
                   pinMode(pump, OUTPUT);
-                  digitalWrite(pump, LOW); 
                 
                   analogWrite(enA, Speed);
                   analogWrite(enB, Speed);
                 
+                  digitalWrite(pump, LOW);
                   Stop();
                 }
                 
                 void loop() {
-                  s2 = analogRead(ir_F);
+                  int sF = analogRead(ir_F);
                 
-                  Serial.print("Sensor Frontal (s2): ");
-                  Serial.print(s2);
-                  Serial.print(" | Limite: ");
-                  Serial.println(threshold);
+                  Serial.print("sF: ");
+                  Serial.println(sF);
                 
-                  if (s2 < threshold) {
-                    Serial.println("!!! FOGO DETECTADO FOCALIZADO! AVANÇANDO E EXTINTO !!!");
-                    
-                    forword();
-                    digitalWrite(pump, HIGH);
-                    
+                  if (sF < threshold) {
+                    if (sF <= closeThreshold) {
+                      Stop();
+                      digitalWrite(pump, HIGH);
+                    } else {
+                      setLeft(true);
+                      setRight(true);
+                      digitalWrite(pump, HIGH);
+                    }
                   } else {
-                    Serial.println("Nenhum fogo frontal detectado. Parado.");
-                    
                     Stop();
-                    digitalWrite(pump, LOW); 
+                    digitalWrite(pump, LOW);
                   }
                 
                   delay(100);
                 }
                 
-                void forword() {
-                  digitalWrite(in1, HIGH);
-                  digitalWrite(in2, LOW);
-                  digitalWrite(in3, HIGH);
-                  digitalWrite(in4, LOW);
+                void setLeft(bool forward) {
+                  if (forward) {
+                    digitalWrite(in1, invertLeft ? LOW : HIGH);
+                    digitalWrite(in2, invertLeft ? HIGH : LOW);
+                  } else {
+                    digitalWrite(in1, invertLeft ? HIGH : LOW);
+                    digitalWrite(in2, invertLeft ? LOW : HIGH);
+                  }
                 }
                 
-                void backword() {
-                  digitalWrite(in1, LOW);
-                  digitalWrite(in2, HIGH);
-                  digitalWrite(in3, LOW);
-                  digitalWrite(in4, HIGH);
-                }
-                
-                void turnRight() {
-                  digitalWrite(in1, HIGH);
-                  digitalWrite(in2, LOW);
-                  digitalWrite(in3, LOW);
-                  digitalWrite(in4, HIGH);
-                }
-                
-                void turnLeft() {
-                  digitalWrite(in1, LOW);
-                  digitalWrite(in2, HIGH);
-                  digitalWrite(in3, HIGH);
-                  digitalWrite(in4, LOW);
+                void setRight(bool forward) {
+                  
+                    if (forward) {
+                    digitalWrite(in3, invertRight ? LOW : HIGH);
+                    digitalWrite(in4, invertRight ? HIGH : LOW);
+                  } else {
+                    digitalWrite(in3, invertRight ? HIGH : LOW);
+                    digitalWrite(in4, invertRight ? LOW : HIGH);
+                  }
+               
                 }
                 
                 void Stop() {
