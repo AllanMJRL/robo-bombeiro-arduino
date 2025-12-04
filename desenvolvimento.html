@@ -61,7 +61,7 @@
                 #define ir_F A1
                 #define ir_L A2
                 
-                #define pump A5 // PINO DA BOMBA D'ÁGUA
+                #define pump A5
                 
                 int Speed = 160;     
                 int s2;             
@@ -104,13 +104,13 @@
                     Serial.println("!!! FOGO DETECTADO FOCALIZADO! AVANÇANDO E EXTINTO !!!");
                     
                     forword();
-                    digitalWrite(pump, HIGH); // LIGA A BOMBA D'ÁGUA
+                    digitalWrite(pump, HIGH);
                     
                   } else {
                     Serial.println("Nenhum fogo frontal detectado. Parado.");
                     
                     Stop();
-                    digitalWrite(pump, LOW); // DESLIGA A BOMBA
+                    digitalWrite(pump, LOW); 
                   }
                 
                   delay(100);
